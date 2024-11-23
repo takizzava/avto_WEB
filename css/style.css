@@ -6,7 +6,7 @@
     }
     
     body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Comfortaa', sans-serif;
     background: linear-gradient(to bottom, #4f4f4f, #1a1a1a); /* Градиентный фон (темно-серый) */
     color: #fff; /* Белый текст для контраста */
     }
@@ -164,7 +164,7 @@ header .call-button:hover {
     header nav ul {
         flex-direction: column;
         align-items: center; /* Центрируем элементы меню */
-        gap: 100px;
+        gap: 10px;
     }
 
     header nav ul li {
@@ -483,23 +483,30 @@ header .call-button:hover {
 
 /* Адаптивность */
 @media (max-width: 768px) {
+    .image-carousel {
+        height: 100vh; /* Высота на весь экран устройства */
+    }
+
     .carousel-slide-window {
-        flex-direction: column; /* Вертикальное расположение текста и изображения */
-        align-items: center;
-        padding: 30px; /* Уменьшенные отступы */
-        gap: 20px;
+        padding: 20px; /* Меньше отступов для экономии пространства */
+        height: 90%; /* Окно занимает 90% экрана */
+        box-sizing: border-box;
+    }
+
+    .carousel-text h3 {
+        font-size: 24px; /* Уменьшенный размер заголовка */
+    }
+
+    .carousel-text p {
+        font-size: 14px; /* Меньший текст для компактности */
     }
 
     .carousel-image {
-        width: 80%; /* Увеличиваем ширину изображения */
-        height: auto; /* Автоматическая высота */
-    }
-
-    .carousel-text {
-        max-width: 100%; /* Текст растягивается на всю ширину */
-        text-align: center; /* Центрируем текст */
+        height: 200px; /* Фиксированная высота изображения */
+        max-width: 80%; /* Масштабируем изображение */
     }
 }
+
 
 @media (max-width: 480px) {
     .carousel-slide-window {
@@ -518,16 +525,38 @@ header .call-button:hover {
 
 
  /* УСЛУГИ */
-    .services {
-        background-color: #333; /* Темный фон для секции услуг */
-        padding: 60px 0;
-    }
+.services {
+    background-color: #333; /* Темный фон для секции услуг */
+    padding: 60px 0;
+}
 
+.services p {
+    margin-bottom: 40px; /* Добавляем отступ снизу */
+    font-size: 18px; /* Устанавливаем стандартный размер текста */
+}
+
+/* Стиль для заголовка h2 */
 .services h2 {
     text-align: center;
     font-size: 36px;
     margin-bottom: 40px;
-    color: #333; /* Более темный цвет для заголовка */
+    color: #f44336; /* Красный цвет для выделения */
+    opacity: 0; /* Исходная прозрачность */
+    transform: translateY(-20px); /* Начальная позиция для анимации */
+    animation: fadeInUp 1s forwards; /* Анимация */
+    animation-delay: 0.5s; /* Задержка перед началом анимации */
+}
+
+/* Анимация для заголовка */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .services-grid {
@@ -585,6 +614,31 @@ header .call-button:hover {
     object-fit: cover; /* Обрезка изображения для лучшего вида */
 }
 
+/* Стили для кнопки "Вернуться к услугам" */
+.button {
+    display: inline-block;
+    background-color: #e74c3c; /* Красный цвет кнопки */
+    color: #fff; /* Белый цвет текста */
+    padding: 12px 24px; /* Отступы по вертикали и горизонтали */
+    font-size: 16px; /* Размер шрифта */
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px; /* Скругленные углы */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: all 0.3s ease; /* Плавное изменение при наведении */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.button:hover {
+    background-color: #c0392b; /* Более темный красный при наведении */
+    transform: translateY(-3px); /* Легкое поднятие кнопки */
+}
+
+.button:active {
+    background-color: #9b2e22; /* Еще более темный красный при нажатии */
+    transform: translateY(0); /* Сбрасываем эффект подъема */
+}
+
 @media (max-width: 768px) {
     .services-grid {
         flex-direction: column;
@@ -594,9 +648,6 @@ header .call-button:hover {
         width: 90%; /* Уменьшаем ширину для лучшей читаемости */
     }
 }
-
-
-
     
     /* О НАС */
     .about {
@@ -694,6 +745,34 @@ footer a:hover {
     border-radius: 15px;
 }
 
+/* Стиль для кнопки Telegram */
+.footer-telegram {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.telegram-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #0088cc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.telegram-button:hover {
+    background-color: #007bb5;
+}
+
+.telegram-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -729,6 +808,8 @@ footer a:hover {
     footer {
     animation: fadeIn 3s ease-out;
     }
+
+    /* УСЛУГИ НА ГЛАВНОЙ СТРАНИЦЕ */
     
     /* Заголовки и текст */
     .service-title {
