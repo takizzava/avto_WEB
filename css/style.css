@@ -186,7 +186,7 @@ header .call-button:hover {
 }
 
 /* Адаптивность для iPhone 14 Pro Max и подобных устройств */
-@media (max-height: 450px) {
+@media (max-width: 450px) and (max-height: 950px)  {
     header {
         flex-direction: column;
         padding: 15px 0;
