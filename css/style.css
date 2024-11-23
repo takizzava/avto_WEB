@@ -19,7 +19,7 @@
     }
     
     /* Шапка */
-    header {
+header {
     background-color: #000; /* Черный фон */
     padding: 20px 0;
     border-radius: 0 0 20px 20px; /* Скругленные границы */
@@ -30,44 +30,44 @@
     position: relative; /* Для позиционирования контактной кнопки */
     flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
     z-index: 10; /* Убедиться, что шапка всегда сверху */
-    }
+}
 
-    /* Контейнер для содержимого */
-    .container {
+/* Контейнер для содержимого */
+.container {
     width: 100%;
     max-width: 1200px; /* Ограничиваем максимальную ширину */
     margin: 0 auto;
     padding: 0 20px; /* Отступы для контейнера */
-    }
+}
 
-    /* Контент шапки */
-    .header-content {
+/* Контент шапки */
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
-    }
+}
 
-    /* Логотип */
-    header .logo {
+/* Логотип */
+header .logo {
     flex: 1; /* Логотип будет занимать доступное пространство */
     text-align: left; /* Логотип слева */
     min-width: 150px; /* Минимальная ширина для логотипа */
     max-width: 300px; /* Максимальная ширина для логотипа */
-    }
+}
 
-    header .logo img {
+header .logo img {
     width: 100%; /* Логотип будет масштабироваться */
     height: auto; /* Сохранение пропорций изображения */
-    }
+}
 
-    /* Навигация */
-    header nav {
+/* Навигация */
+header nav {
     display: flex;
     justify-content: center; /* Центрирование меню */
     flex-grow: 1; /* Использование доступного пространства */
-    }
+}
 
 header nav ul {
     list-style: none;
@@ -164,7 +164,7 @@ header .call-button:hover {
     header nav ul {
         flex-direction: column;
         align-items: center; /* Центрируем элементы меню */
-        gap: 10px;
+        gap: 20px; /* Увеличенные отступы между кнопками */
     }
 
     header nav ul li {
@@ -209,7 +209,7 @@ header .call-button:hover {
     header nav ul {
         flex-direction: column;
         align-items: center; /* Центрируем элементы меню */
-        gap: 10px;
+        gap: 20px; /* Увеличенные отступы между кнопками */
     }
 
     header nav ul li {
@@ -229,8 +229,6 @@ header .call-button:hover {
         margin-top: 15px; /* Увеличение отступа для кнопки */
     }
 }
-
-
 
 /* Адаптивность для планшетов и ноутбуков */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -256,7 +254,7 @@ header .call-button:hover {
     header nav ul {
         flex-direction: column;
         align-items: center; /* Центрируем элементы меню */
-        gap: 10px;
+        gap: 20px; /* Увеличенные отступы между кнопками */
     }
 
     header nav ul li {
@@ -286,31 +284,23 @@ header .call-button:hover {
 
     header .logo {
         text-align: left;
-        max-width: 300px;
-        margin-right: 40px;
+        margin-bottom: 0;
     }
 
-    header nav {
+    header nav ul {
         flex-direction: row;
-        justify-content: center;
+        gap: 30px; /* Отступы между кнопками увеличены */
     }
 
-    header nav ul li {
-        margin-right: 30px;
-    }
-
-    header .header-contact {
-        align-items: flex-end;
+    header .contact-info {
         text-align: right;
-        margin-top: 0;
     }
 
     header .call-button {
-        font-size: 16px;
-        padding: 12px 25px;
-        margin-top: 10px;
+        margin-top: 0;
     }
 }
+
 
 
     /* Приветственный баннер */
