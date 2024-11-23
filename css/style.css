@@ -150,6 +150,7 @@ header .call-button:hover {
     }
 
     header .logo {
+        text-align: center;
         margin-bottom: 10px;
         max-width: 100%; /* Логотип будет занимать всю ширину */
     }
@@ -163,7 +164,11 @@ header .call-button:hover {
     header nav ul {
         flex-direction: column;
         align-items: center; /* Центрируем элементы меню */
-        gap: 10px;
+        gap: 100px;
+    }
+
+    header nav ul li {
+        margin-bottom: 10px; /* Отступ между кнопками навигации */
     }
 
     header .header-contact {
