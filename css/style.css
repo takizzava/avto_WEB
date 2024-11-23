@@ -185,55 +185,78 @@ header .call-button:hover {
     }
 }
 
-@media (max-width: 400px) {
+/* Адаптивность для iPhone 14 Pro Max и подобных устройств */
+@media (max-width: 430px) {
+    header {
+        flex-direction: column; /* Элементы шапки располагаются вертикально */
+        align-items: center; /* Центрируем элементы */
+    }
+
     header .logo {
-        max-width: 100px;
+        text-align: center; /* Логотип выравнивается по центру */
+        margin-bottom: 15px; /* Добавляем отступ снизу */
+    }
+
+    header nav {
+        width: 100%; /* Навигация занимает всю ширину */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Элементы меню располагаются вертикально */
+        gap: 10px; /* Добавляем отступы между кнопками */
+        align-items: center; /* Центрируем кнопки */
     }
 
     header nav ul li a {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-
-    header .call-button {
-        padding: 10px 20px;
-        font-size: 14px;
+        padding: 10px 20px; /* Уменьшаем внутренние отступы кнопок */
+        font-size: 14px; /* Уменьшаем размер шрифта */
     }
 }
+
 
 
 /* Адаптивность для планшетов и ноутбуков */
 @media (min-width: 769px) and (max-width: 1024px) {
     header {
-        flex-direction: row;
+        flex-direction: column;
+        padding: 15px 0;
         justify-content: space-between;
-        padding: 15px 20px;
+        align-items: center; /* Элементы по центру */
     }
 
     header .logo {
-        text-align: left;
-        max-width: 250px;
-        margin-right: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+        max-width: 100%; /* Логотип будет занимать всю ширину */
     }
 
     header nav {
-        flex-direction: row;
-        justify-content: center; /* Центрируем меню */
+        flex-direction: column;
+        margin-top: 10px;
+        width: 100%; /* Меню будет растягиваться на всю ширину */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center; /* Центрируем элементы меню */
+        gap: 10px;
     }
 
     header nav ul li {
-        margin-right: 20px;
+        margin-bottom: 10px; /* Отступ между кнопками навигации */
     }
 
     header .header-contact {
+        align-items: center; /* Центрируем контактные элементы */
+        margin-top: 20px;
+    }
+
+    header .contact-info {
         text-align: right;
-        margin-top: 0;
     }
 
     header .call-button {
-        font-size: 18px;
-        padding: 12px 20px;
-        margin-top: 0;
+        margin-top: 15px; /* Увеличение отступа для кнопки */
     }
 }
 
