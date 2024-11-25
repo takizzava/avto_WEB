@@ -529,99 +529,218 @@ header .call-button:hover {
 }
 
 @media (max-width: 768px) {
-    .carousel-item {
-        flex-direction: column; /* Картинка сверху, текст снизу */
+    /* Общие стили для карусели */
+    .image-carousel {
+        position: relative;
+        width: 100%;
+        height: 300px; /* Устанавливаем высоту слайдера */
+        overflow: hidden;
+        background: linear-gradient(to bottom, #4f4f4f, #1a1a1a);
+        display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        padding: 20px;
-        box-sizing: border-box;
-        min-height: 400px; /* Минимальная высота для слайда */
-        background-color: #222; /* Фон для слайдов без изображения */
     }
 
-    .carousel-image {
+    /* Контейнер для карусели, занимающий всю ширину */
+    .carousel-container {
+        display: flex;
         width: 100%;
-        height: auto;
-        max-width: 90%;
-        margin-bottom: 15px;
-        border-radius: 15px;
-        background-color: #333; /* Фон, если нет изображения */
-        display: flex; /* Гарантирует, что блок виден */
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    /* Каждый слайд должен занимать 100% ширины экрана */
+    .carousel-item {
+        flex: 0 0 100%; /* Каждый слайд заполняет всю ширину */
+        display: flex;
         justify-content: center;
         align-items: center;
+        height: 100%; /* Слайд занимает всю высоту родительского контейнера */
+        box-sizing: border-box;
+        padding: 10px; /* Добавляем отступы для предотвращения выхода за пределы */
+    }
+
+    /* Окно внутри слайда */
+    .carousel-slide-window {
+        background-color: rgba(0, 0, 0, 0.8); /* Фон для слайда */
+        border-radius: 20px;
+        padding: 20px;
+        max-width: 100%; /* Слайд адаптивен по ширине */
+        width: 100%;
+        min-height: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        gap: 20px;
+    }
+
+    /* Картинка в слайде */
+    .carousel-image {
+        width: 100%; /* Картинка занимает всю ширину */
+        height: auto;
+        margin-bottom: 15px;
+        border-radius: 15px;
     }
 
     .carousel-image img {
-        width: 100%; /* Картинка занимает всю ширину */
-        height: auto; /* Поддержка пропорций */
-        display: block; /* Предотвращает исчезновение пустого блока */
+        width: 100%; /* Картинка адаптируется к контейнеру */
+        height: auto;
+        object-fit: cover; /* Заполнение контейнера без искажений */
+        border-radius: 15px;
     }
 
+    /* Текст в слайде */
     .carousel-text {
-        max-width: 100%; 
-        padding: 0 10px; 
+        color: #fff;
+        font-size: 14px; /* Уменьшаем размер текста на мобильных */
+        max-width: 100%;
+        text-align: center;
     }
 
     .carousel-text h2 {
-        font-size: 24px;
+        font-size: 20px;
         margin-bottom: 10px;
+        color: #f44336;
     }
 
-    .carousel-text p {
-        font-size: 16px;
-        line-height: 1.5;
+    /* Кнопки для переключения слайдов */
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        transform: translateY(-50%);
+        transition: background-color 0.3s ease;
+        border-radius: 50%;
+        font-size: 18px;
+    }
+
+    /* Позиционирование кнопок */
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    /* Эффект при наведении на кнопки */
+    .carousel-button:hover {
+        background-color: rgba(0, 0, 0, 0.9);
     }
 }
 
 
-/* Адаптация для iPhone Pro Max и аналогичных устройств */
+
 @media (max-width: 450px) and (max-height: 950px) {
-    .carousel-item {
-        flex-direction: column; /* Картинка сверху, текст снизу */
+    /* Общие стили для карусели на iPhone Pro Max */
+    .image-carousel {
+        position: relative;
+        width: 100%; /* Занимает всю ширину */
+        height: 350px; /* Высота слайдера на большом экране */
+        overflow: hidden;
+        background: linear-gradient(to bottom, #4f4f4f, #1a1a1a); /* Градиентный фон */
+        display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        padding: 25px 15px; /* Комфортные отступы */
-        box-sizing: border-box;
-        min-height: 450px; /* Увеличенная минимальная высота */
-        background-color: #222; /* Фон для всех слайдов */
     }
 
+    /* Контейнер для карусели, занимающий всю ширину */
+    .carousel-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    /* Каждый слайд должен занимать 100% ширины */
+    .carousel-item {
+        flex: 0 0 100%; /* Каждый слайд заполняет всю ширину */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%; /* Слайд занимает всю высоту родительского контейнера */
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    /* Окно внутри слайда */
+    .carousel-slide-window {
+        background-color: rgba(0, 0, 0, 0.8); /* Фон слайда */
+        border-radius: 20px;
+        padding: 20px;
+        max-width: 100%;
+        width: 100%;
+        min-height: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        gap: 20px;
+    }
+
+    /* Картинка в слайде */
     .carousel-image {
-        width: 100%; /* Заполняет всю ширину экрана */
+        width: 100%; /* Картинка заполняет всю ширину */
         height: auto;
-        max-width: 85%; /* Немного уменьшаем для лучшего вида */
-        margin-bottom: 20px; /* Отступ между картинкой и текстом */
-        border-radius: 20px; /* Остаются скругленные углы */
+        margin-bottom: 15px;
+        border-radius: 15px;
     }
 
     .carousel-image img {
-        width: 100%; /* Картинка адаптируется к блоку */
+        width: 100%; /* Картинка масштабируется по ширине */
         height: auto;
-        display: block;
-        border-radius: 20px; /* Остаются скругленные углы */
+        object-fit: cover; /* Заполнение изображения без искажений */
+        border-radius: 15px;
     }
 
+    /* Текст в слайде */
     .carousel-text {
+        color: #fff;
+        font-size: 16px; /* Уменьшаем размер текста на мобильных */
         max-width: 100%;
-        padding: 0 15px; /* Дополнительные отступы для текста */
+        text-align: center;
     }
 
     .carousel-text h2 {
-        font-size: 26px; /* Чуть увеличенный заголовок */
-        margin-bottom: 12px;
-        color: #f44336; /* Акцентный цвет */
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #f44336; /* Цвет заголовка */
     }
 
-    .carousel-text p {
-        font-size: 18px; /* Удобный размер текста */
-        line-height: 1.6; /* Улучшенная читаемость */
-        color: #fff; /* Белый текст */
-    }
-
+    /* Кнопки для переключения слайдов */
     .carousel-button {
-        display: none; /* Отключаем кнопки на мобильных */
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        transform: translateY(-50%);
+        transition: background-color 0.3s ease;
+        border-radius: 50%;
+        font-size: 18px;
+    }
+
+    /* Позиционирование кнопок */
+    .prev {
+        left: 15px;
+    }
+
+    .next {
+        right: 15px;
+    }
+
+    /* Эффект при наведении на кнопки */
+    .carousel-button:hover {
+        background-color: rgba(0, 0, 0, 0.9);
     }
 }
 
