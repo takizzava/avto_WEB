@@ -982,18 +982,31 @@ footer a:hover {
     
     
     /* О компании */
+.about {
+    text-align: center; /* Центрируем весь контент в разделе */
+    padding: 60px 20px; /* Добавляем отступы для улучшения визуального восприятия */
+     /* Светлый фон для секции */
+}
+
 .about h1 {
     font-size: 42px;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #ff5722; /* Яркий оранжевый */
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
 }
 
 .about p {
     font-size: 20px;
     line-height: 1.8;
     margin-bottom: 20px;
-    text-align: justify;
+    color: #fff; /* Тёмно-серый цвет для текста */
+    text-align: center; /* Выравнивание текста по центру */
+    max-width: 800px; /* Ограничиваем ширину текста */
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Arial', sans-serif;
 }
 
 .about .about-button {
@@ -1006,6 +1019,7 @@ footer a:hover {
     font-size: 16px;
     border-radius: 30px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center; /* Центрируем текст на кнопке */
 }
 
 .about .about-button:hover {
@@ -1013,25 +1027,43 @@ footer a:hover {
     transform: scale(1.1);
 }
 
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .about h1 {
+        font-size: 32px; /* Уменьшаем размер заголовка на мобильных устройствах */
+    }
+
+    .about p {
+        font-size: 18px; /* Уменьшаем размер текста на мобильных устройствах */
+    }
+
+    .about .about-button {
+        font-size: 14px; /* Уменьшаем размер кнопки на мобильных устройствах */
+        padding: 10px 20px;
+    }
+}
 
 /* Видео секция */
 .video-section {
     background-color: #333; /* Темный фон для секции */
-    padding: 60px 0;
+    padding: 60px 20px; /* Немного уменьшен отступ */
     text-align: center; /* Центрируем контент */
 }
 
+/* Заголовок секции */
 .video-section h2 {
     font-size: 36px;
     color: #ff5722; /* Яркий оранжевый */
     margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
 }
 
+/* Контейнер для видео */
 .video-container {
     position: relative;
     max-width: 100%;
-    height: auto;
-    padding-top: 30%; /* Соотношение сторон 16:9 для видео */
+    height: 0;
+    padding-top: 56.25%; /* Соотношение сторон 16:9 для видео (100 / 16 * 9 = 56.25) */
     overflow: hidden;
     margin: 0 auto;
     background-color: #000; /* Темный фон для контейнера видео */
@@ -1039,6 +1071,7 @@ footer a:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Тень вокруг видео */
 }
 
+/* Вставка видео с YouTube */
 .video-container iframe {
     position: absolute;
     top: 0;
@@ -1050,6 +1083,7 @@ footer a:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Тень вокруг видео */
 }
 
+/* Описание под видео */
 .video-section p {
     font-size: 18px;
     color: #bbb; /* Светло-серый текст */
@@ -1058,6 +1092,22 @@ footer a:hover {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .video-section h2 {
+        font-size: 28px; /* Уменьшаем размер заголовка */
+    }
+
+    .video-section p {
+        font-size: 16px; /* Уменьшаем размер текста */
+    }
+    
+    .video-container {
+        padding-top: 56.25%; /* Оставляем соотношение сторон 16:9 */
+    }
 }
 
 
