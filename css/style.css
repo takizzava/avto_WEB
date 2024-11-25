@@ -529,62 +529,102 @@ header .call-button:hover {
 }
 
 @media (max-width: 768px) {
-    .carousel-container {
-        display: flex;
-        flex-direction: row; /* Слайды располагаются горизонтально */
-        width: 100%;
-        overflow-x: hidden; /* Прячем содержимое за пределами контейнера */
-        scroll-snap-type: x mandatory; /* Для плавного скроллинга по одному слайду */
-    }
-
     .carousel-item {
-        flex: 0 0 100%; /* Каждый слайд занимает 100% ширины экрана */
-        display: flex;
         flex-direction: column; /* Картинка сверху, текст снизу */
+        justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 10px;
+        padding: 20px;
         box-sizing: border-box;
+        min-height: 400px; /* Минимальная высота для слайда */
+        background-color: #222; /* Фон для слайдов без изображения */
+    }
+
+    .carousel-image {
+        width: 100%;
+        height: auto;
+        max-width: 90%;
+        margin-bottom: 15px;
+        border-radius: 15px;
+        background-color: #333; /* Фон, если нет изображения */
+        display: flex; /* Гарантирует, что блок виден */
+        justify-content: center;
+        align-items: center;
     }
 
     .carousel-image img {
-        width: 100%; /* Картинка занимает всю ширину экрана */
-        height: auto; /* Сохраняем пропорции */
-        margin-bottom: 15px; /* Отступ между картинкой и текстом */
-        border-radius: 0; /* Убираем скругление на мобильных */
+        width: 100%; /* Картинка занимает всю ширину */
+        height: auto; /* Поддержка пропорций */
+        display: block; /* Предотвращает исчезновение пустого блока */
     }
 
-    .carousel-text h3 {
-        font-size: 18px; /* Уменьшаем размер заголовка */
-        margin-bottom: 8px;
+    .carousel-text {
+        max-width: 100%; 
+        padding: 0 10px; 
+    }
+
+    .carousel-text h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
     }
 
     .carousel-text p {
-        font-size: 14px; /* Уменьшаем размер текста */
-        line-height: 1.5; /* Межстрочный интервал для читабельности */
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+
+/* Адаптация для iPhone Pro Max и аналогичных устройств */
+@media (max-width: 450px) and (max-height: 950px) {
+    .carousel-item {
+        flex-direction: column; /* Картинка сверху, текст снизу */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 25px 15px; /* Комфортные отступы */
+        box-sizing: border-box;
+        min-height: 450px; /* Увеличенная минимальная высота */
+        background-color: #222; /* Фон для всех слайдов */
+    }
+
+    .carousel-image {
+        width: 100%; /* Заполняет всю ширину экрана */
+        height: auto;
+        max-width: 85%; /* Немного уменьшаем для лучшего вида */
+        margin-bottom: 20px; /* Отступ между картинкой и текстом */
+        border-radius: 20px; /* Остаются скругленные углы */
+    }
+
+    .carousel-image img {
+        width: 100%; /* Картинка адаптируется к блоку */
+        height: auto;
+        display: block;
+        border-radius: 20px; /* Остаются скругленные углы */
+    }
+
+    .carousel-text {
+        max-width: 100%;
+        padding: 0 15px; /* Дополнительные отступы для текста */
+    }
+
+    .carousel-text h2 {
+        font-size: 26px; /* Чуть увеличенный заголовок */
+        margin-bottom: 12px;
+        color: #f44336; /* Акцентный цвет */
+    }
+
+    .carousel-text p {
+        font-size: 18px; /* Удобный размер текста */
+        line-height: 1.6; /* Улучшенная читаемость */
+        color: #fff; /* Белый текст */
     }
 
     .carousel-button {
-        display: block; /* Кнопки видны */
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
-        color: #fff;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-    }
-
-    .carousel-button.prev {
-        left: 10px;
-    }
-
-    .carousel-button.next {
-        right: 10px;
+        display: none; /* Отключаем кнопки на мобильных */
     }
 }
+
 
 
 
