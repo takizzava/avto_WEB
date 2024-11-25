@@ -152,47 +152,8 @@
 </section>
 
 <!-- Встроенный скрипт для переключения слайдов -->
-<script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.carousel-item');
-    const carouselContainer = document.querySelector('.carousel-container');
-    const slideCount = slides.length;
-    let autoSlideInterval;
+<script src="js/carousel.js"></script>
 
-    function showSlides(n) {
-        if (n >= slideCount) slideIndex = 0;
-        if (n < 0) slideIndex = slideCount - 1;
-
-        // Перемещаем карусель с плавной анимацией
-        carouselContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
-    }
-
-    function moveSlide(n) {
-        slideIndex += n;
-        showSlides(slideIndex);
-        resetAutoSlide(); // Сбрасываем авто-листание при ручном переключении
-    }
-
-    // Автоматическое переключение слайдов каждые 5 секунд
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(() => {
-            slideIndex++;
-            showSlides(slideIndex);
-        }, 5000); // 5000 мс = 5 секунд
-    }
-
-    // Сброс авто-листания после ручного управления
-    function resetAutoSlide() {
-        clearInterval(autoSlideInterval);
-        startAutoSlide();
-    }
-
-    // Инициализация слайдера и автоматического листания
-    document.addEventListener('DOMContentLoaded', () => {
-        showSlides(slideIndex);
-        startAutoSlide();
-    });
-</script>
 
    <!-- Услуги -->
 <section id="services" class="services">
